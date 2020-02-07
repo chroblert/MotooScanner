@@ -1,12 +1,12 @@
 
-## 用法
+## 0x01 用法
 ```
 # nohup ./scan.sh 要探测的所有服务端口列表文件 目标的所有真实ip/段[C段]列表文件 保存扫描结果的目录名[随意] 用户名字典文件 密码字典文件 &
 # nohup ./scan.sh TargetPorts.txt TargetIplist.txt result user.txt pwd.txt &
 # tail -f nohup.out
 ```
 
-## 大致工作流程
+## 0x02 大致工作流程
 ```
 组装 Masscan + Nmap [ 自行选择性是否加脚本 ] + Medusa + Hydra 相互配合自动探测 
 由于是同时针对多个ip段扫一个端口,而非针对一个ip同时扫一堆端口,加之用的只是常规循环(单线程),理论上防护规避效果应该稍好
@@ -15,7 +15,7 @@
 ```
 
 
-## 依赖安装 [ 此处以ubuntu 16.04 64位为例 ]
+## 0x03 依赖安装 [ 以ubuntu 16.04 64位为例 ]
 
 
 ### 编译安装最新版masscan
@@ -26,28 +26,28 @@
 # man masscan
 ```
 
-### 编译安装最新版nmap
+### 编译安装最新版 nmap
 ```
 # apt-get install openssl libssl-dev libssh2-1-dev build-essential -y
 # wget https://nmap.org/dist/nmap-7.80.tar.bz2
 # tar xf nmap-7.80.tar.bz2 && cd nmap-7.80 && chmod +x ./* && ./configure && make && make install
 ```
 
-### 编译安装最新版medusa
+### 编译安装最新版 medusa
 ```
 # apt-get install build-essential libssl-dev libpq5 libpq-dev libssh2-1 libssh2-1-dev libgcrypt11-dev libgnutls-dev libsvn-dev freerdp libfreerdp-dev -y
 # wget http://www.foofus.net/jmk/tools/medusa-2.2.tar.gz
 # tar xf medusa-2.2.tar.gz && cd medusa-2.2/ && ./configure && make && make install
 ```
 
-### 编译安装最新版hydra
+### 编译安装最新版 hydra
 ```
 # apt-get update
 # apt-get install git libssl-dev libssh-dev libidn11-dev libpcre3-dev libgtk2.0-dev libmysqlclient-dev libpq-dev libsvn-dev firebird-dev libgcrypt11-dev libncurses5-dev -y
 # 7z x thc-hydra-9.0.7z && cd thc-hydra-9.0/ && chmod +x ./* && ./configure && make && make install
 ```
 
-## 说明
+### 脚本说明
 ```
 脚本初衷只为尽量简化我们日常渗透中的一些例行的重复性动作,利用bash就地取材,快速实现的一个极为廉价的外部搜集工具
 所有 "扫描" 和 "弱口令探测" 的结果均已按照其所对应的 "端口" 和 "服务名" 分类保存在当前目录中的result目录下,目录名可自定义
@@ -59,4 +59,5 @@ nmap 默认的帐号密码字典,脚本已事先优化增强过
 ```
 
 
-### 脚本仅限于安全研究学习和授权渗透之用,严禁将其用于任何恶意非法用途,由此所产生的一些法律责任,均由使用者自行承担
+### 脚本仅限于安全研究学习和授权渗透之用
+### 严禁将其用于任何恶意非法用途,由此所产生的一些法律责任,均由使用者自行承担
