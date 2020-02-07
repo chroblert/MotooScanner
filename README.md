@@ -1,9 +1,9 @@
 
 ## 用法
 ```
-nohup ./scan.sh 要探测的所有服务端口列表文件 目标的所有真实ip/段[C段]列表文件 保存扫描结果的目录名[随意] 用户名字典文件 密码字典文件 &
-nohup ./scan.sh TargetPorts.txt TargetIplist.txt result user.txt pwd.txt &
-tail -f nohup.out
+# nohup ./scan.sh 要探测的所有服务端口列表文件 目标的所有真实ip/段[C段]列表文件 保存扫描结果的目录名[随意] 用户名字典文件 密码字典文件 &
+# nohup ./scan.sh TargetPorts.txt TargetIplist.txt result user.txt pwd.txt &
+# tail -f nohup.out
 ```
 
 ## 大致工作流程
@@ -14,7 +14,9 @@ tail -f nohup.out
 之后再针对一些可快速getshell的基础服务,进行初期弱口令尝试
 ```
 
+
 ## 依赖安装 [ 此处以ubuntu 16.04 64位为例 ]
+
 
 ### 编译安装最新版masscan
 ```
@@ -56,4 +58,5 @@ nmap 默认的帐号密码字典,脚本已事先优化增强过
 用时间换精度,尽力避免重复劳动,另外,vps要靠谱,不然长时间高频大流量很容易被封,这个就需要弟兄们自己解决了
 ```
 
-# 脚本仅限于安全研究学习和授权渗透之用,严禁将其用于任何恶意非法用途,由此所产生的一些法律责任,均由使用者自行承担
+
+### 脚本仅限于安全研究学习和授权渗透之用,严禁将其用于任何恶意非法用途,由此所产生的一些法律责任,均由使用者自行承担
