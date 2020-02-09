@@ -24,8 +24,7 @@
 ### 编译安装最新版masscan
 ```
 # apt-get install git gcc make libpcap-dev clang -y
-# cd masscan-1.0.5/
-# make
+# cd masscan-1.0.5/ && make
 # man masscan
 ```
 
