@@ -51,7 +51,7 @@ do
         # citrix-enum-servers-xml.nse,ssl-heartbleed.nse,http-shellshock.nse,http-cisco-anyconnect.nse
         # http-axis2-dir-traversal.nse,http-backup-finder.nse,http-enum.nse,http-wordpress-users.nse
         # http-methods.nse,http-webdav-scan.nse,http-iis-short-name-brute.nse,http-git.nse
-        # 可选漏洞检测脚本 tomcat-cve-2017-12615.nse,http-pulse_ssl_vpn.nse,CVE-2019-19781.nse,struts2-scan.nse,cisco-cve-2019-1937.nse
+        # 可选漏洞检测脚本 tomcat-cve-2017-12615.nse,http-pulse_ssl_vpn.nse,CVE-2019-19781.nse,struts2-scan.nse,cisco-cve-2019-1937.nse,cve_2019_1653.nse
     fi
 
     # Java Web Info 
