@@ -40,8 +40,15 @@ do
     sleep 1
     grep "open tcp ${port}" *_${port}_*.txt | awk -F " " {'print $4'} > ./${3}/${port}.txt
     # grep "open tcp ${port}" *_${port}_*.txt | awk -F ":" {'print $2'} > ${port}_banner.txt
+    # ---- added by JC0o0l ---
+    if [ ! -s ./${3}/${port}.txt ]; then
+    	rm -fr *_${port}_*.txt
+	    rm -rf ./${3}/${port}.txt
+        continue
+    fi
     rm -fr *_${port}_*.txt
-    
+
+    # ---- end ----
     # Get All Web banner
     if [ $port -ge 80 -a  $port -le 90 ] || [ $port -ge 8080 -a $port -le 8090 ] || [ $port -eq 443 ] || [ $port -eq 8443 ];then
 	    echo "Get Web banner Begining , wait  ......"
